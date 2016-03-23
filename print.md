@@ -1,0 +1,24 @@
+## R Console Print in Rust
+
+There are several ways to print to console.
+
+#### r_printf("...")
+
+Print message.
+
+```rust
+r_printf(&format!("{}, {}, {}", "1", 2, 3))
+```
+
+#### rustr::util::rprint("...") 
+
+Print R Object.
+
+```rust
+let res : NumVec = try!(NumVec::rnew(x))
+rprint(res)
+```
+
+#### r_warn("...")
+
+Print Warnings.

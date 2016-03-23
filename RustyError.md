@@ -1,0 +1,51 @@
+## Rusty Error Handling
+
+Do you want to `Throw` `Throw` `Throw`?? Sorry You can not!
+
+But you can `try!()` `try!()` or `rtry!()`.
+
+Make sure you learn enough Rust and read the [Rust Book](https://doc.rust-lang.org/book/error-handling.html)
+
+This is `Monadic Error Handling`. If you do not know what it means, just forget it. It is not that kind of bad _ss thing.
+
+### RResult<T>
+
+If a Rust function may cause error, and need to throw a exception in R, you can return RResult<T> as your function return type.
+
+For example,
+
+```rust
+pub fn rinteger(x : SEXP)->RResult<usize>{
+	let res :RResult<usize> = usize::rnew(x);
+	res
+}
+```
+
+Trait `RNew` will convert `SEXP` R Object Pointer to Rust type. It may fail, so it return `RResult<some_type>`.
+
+
+```r
+rust(code = '
+// #[rustr_export]
+pub fn rinteger(x : SEXP)->RResult<usize>{
+	let res :RResult<usize> = usize::rnew(x);
+	res
+}
+	')
+
+rinteger(1)
+#> Error: NotCompatible: expecting a integer
+
+rinteger(1L)
+#> [1] 1
+
+e = tryCatch(rinteger(1), error = function(e) e)
+e
+#> <NotCompatible: NotCompatible: expecting a integer>
+
+str(e)
+#> List of 2
+#>  $ message: chr "NotCompatible: expecting a integer"
+#>  $ call   : NULL
+#>  - attr(*, "class")= chr [1:4] "NotCompatible" "RustError" "error" "condition"
+```

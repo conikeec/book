@@ -1,0 +1,11 @@
+{
+    "plugins": ["ga","katex","sitemap"],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-75038252-1"
+        },
+        "sitemap": {
+            "hostname": "http://docs.rustr.org/"
+        }
+    }
+}
