@@ -2,10 +2,10 @@
     "plugins": ["ga","katex","sitemap"],
     "pluginsConfig": {
         "ga": {
-            "token": "UA-75038252-1"
+            "token": "UA-75482716-1"
         },
         "sitemap": {
-            "hostname": "http://docs.rustr.org/"
+            "hostname": "https://book.rustr.org"
         }
     }
 }

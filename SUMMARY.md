@@ -8,6 +8,7 @@
 	- [Run Scripts](./Run/Run.md)
 	- [Create Packages](./Run/Pkg.md)
 	- [Summary](./Run/Sum.md)
-- [Rusty Error Handling](./RustyError.md)
+- [Rusty Error Handling](./rusty_error.md)
 - [R Console Printing in Rust](./print.md)
+- [R Type <-> Rust Type](./r_rust_type.md)
 - [Cheat Sheet](./cheatsheet.md)
