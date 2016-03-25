@@ -11,4 +11,5 @@
 - [Rusty Error Handling](./rusty_error.md)
 - [R Console Printing in Rust](./print.md)
 - [R Type <-> Rust Type](./r_rust_type.md)
+- [R Foreign Function Interface](./r_h.md)
 - [Cheat Sheet](./cheatsheet.md)
