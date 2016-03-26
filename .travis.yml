@@ -19,7 +19,7 @@ env:
   - secure: EVuqW4VBIt3+mYgUZpHL5S4waHRBZsX1zqBO8wfNnw1n5M8VPi5MqEiyiPbYBJOYJWCJVCf2qwTIjl2L45wf4QaDBxSHIim+HKYnwRNaROOZkmUpFLymS7kGAZV3ujdm70x0QdDqDiLrm0S1+ii59swth7rtd++IRz6gBbKooZdsbV0GJcdr4EU+PpcQAqlM4JlCRqgMl/of5jMsFY7YepVxKqMnq4O+lCIMUCq3lvvu3XLm5dKk6ZhSJuzdQJTfBJKxfo6myz0C44K/Tp4F6x7u+sVumvma5zjXqXf2/1Q+79a8p+9xXuKKytIQBC98pO2a5FxkhZKtglEYlhaQ3qTXv2enKjTj6chHOf08dwDoEGw2eWfGvDm1dnKV39Gk5HyBuMRzYg9flvFReedwlGxZNOe7xToIOgizTy2S/zPu4bROJwlA3etLSVuBMpRcMztUALAKMdOXiNxc4WyuLQ7rhjmzHLIKq846vJBTQlov0AQYQhvoM6SAGiYi/sepUZrOOy7pnddE87m4AsEnNUokP8dssA/Jtqv8fCUqnM83oEir6k+pRMrcrRo1QL7kHHnZjb1dyjj/cRjzzZxYzzMsYgNcbRxW7yEp7Pp8CEdGqlfKAJL4uvjcIOcQfm19WIHNtcaHF1BrLCLHQ9YRT8Hx7wwdMTViFblAOBioPrs=
   # override the default `--features unstable` used for the nightly branch (optional)
   - TRAVIS_CARGO_NIGHTLY_FEATURE="date engine random"
-  - R_KNITR_OPTIONS="knitr.chunk.tidy=TRUE" PATH=$HOME/bin:$PATH
+  - PATH=$HOME/bin:$PATH
   - PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 
 before_install:
