@@ -52,6 +52,7 @@ script:
   - # This generates a `web` directory containing the website.
   - cp ./CNAME ./_book/CNAME
   - cd _book
+  - rm -rf _bookdown_files
   - git init
   - git checkout -b gh-pages
   - git add .
