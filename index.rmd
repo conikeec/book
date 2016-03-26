@@ -15,7 +15,7 @@ github-repo: rustr/book
 
 # Introduction
 
-## Rust and R Integration**
+**Rust and R Integration**
 
 `rustr` is a Rust library that provides a Rust API to work with R.
 
