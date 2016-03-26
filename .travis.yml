@@ -19,7 +19,7 @@ env:
   # override the default `--features unstable` used for the nightly branch (optional)
   - TRAVIS_CARGO_NIGHTLY_FEATURE="date engine random"
   - R_KNITR_OPTIONS="knitr.chunk.tidy=TRUE" PATH=$HOME/bin:$PATH
-  - BOOTSTRAP_LATEX="1" BOOTSTRAP_PANDOC="1" PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
+  - BOOTSTRAP_PANDOC="1" PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 
 before_install:
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
@@ -27,8 +27,11 @@ before_install:
   - ./travis-tool.sh bootstrap
   - sudo apt-get install libfreetype6 libfreetype6-dev
   - sudo apt-get install libfontconfig1 libfontconfig1-dev
-  - sudo apt-get install texlive-xetex
-
+  - curl -Lo /tmp/texlive.tar.gz https://github.com/yihui/ubuntu-bin/releases/download/latest/texlive.tar.gz
+  - tar xzf /tmp/texlive.tar.gz -C ~
+  - export PATH=/$HOME/texlive/bin/x86_64-linux:$PATH
+  - tlmgr update --self
+  
 install:
   - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr dplyr 
   - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml servr rsconnect htmlwidgets webshot
@@ -38,10 +41,10 @@ install:
   - sudo tar xvjf $PHANTOM_JS.tar.bz2
   - sudo mv $PHANTOM_JS /usr/local/share
   - sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
-
-script: 
   - cd "$TRAVIS_BUILD_DIR"
   - Rscript _render.R
+
+script: 
   - # This generates a `web` directory containing the website.
   - cp ./CNAME ./_book/CNAME
   - cd _book
