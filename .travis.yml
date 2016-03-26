@@ -19,19 +19,24 @@ env:
   # override the default `--features unstable` used for the nightly branch (optional)
   - TRAVIS_CARGO_NIGHTLY_FEATURE="date engine random"
   - R_KNITR_OPTIONS="knitr.chunk.tidy=TRUE" PATH=$HOME/bin:$PATH
-  - BOOTSTRAP_LATEX="1" BOOTSTRAP_PANDOC="1"
+  - BOOTSTRAP_LATEX="1" BOOTSTRAP_PANDOC="1" PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 
 before_install:
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
+  - sudo apt-get install libfreetype6 libfreetype6-dev
+  - sudo apt-get install libfontconfig1 libfontconfig1-dev
 
 install:
-  - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr
-  - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml rsconnect htmlwidgets servr dplyr webshot
+  - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr dplyr 
+  - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml servr rsconnect htmlwidgets webshot
   - ./travis-tool.sh install_github rstudio/bookdown
   - ./travis-tool.sh install_github rustr/rustinr
-  - "[ -x \"$HOME/bin/phantomjs\" ] || Rscript -e \"webshot::install_phantomjs()\""
+  - wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
+  - sudo tar xvjf $PHANTOM_JS.tar.bz2
+  - sudo mv $PHANTOM_JS /usr/local/share
+  - sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
 
 script: 
   - cd "$TRAVIS_BUILD_DIR"
