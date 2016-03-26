@@ -26,6 +26,7 @@ This project is now under construction. Issues and Pull requests are welcome!
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE, formatR.indent = 2)
+library(methods)
 library(rustinr)
 set.seed(100)
 ```
