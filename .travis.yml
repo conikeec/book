@@ -27,7 +27,7 @@ before_install:
   - ./travis-tool.sh bootstrap
   - sudo apt-get install libfreetype6 libfreetype6-dev
   - sudo apt-get install libfontconfig1 libfontconfig1-dev
-  - sudo apt-get install texlive-xelatex
+  - sudo apt-get install texlive-xetex
 
 install:
   - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr dplyr 
