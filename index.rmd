@@ -1,6 +1,8 @@
 --- 
 title: "Rustr Book"
 knit: "bookdown::render_book"
+author: "https://book.rustr.org"
+date: "`r paste('updated on ',Sys.Date())`"
 documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
