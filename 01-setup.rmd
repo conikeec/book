@@ -1,7 +1,3 @@
----
-knit: "bookdown::preview_chapter"
----
-
 # Setup
 
 Rustr support Linux, Mac, and Windows.

@@ -1,7 +1,3 @@
----
-knit: "bookdown::preview_chapter"
----
-
 # Run
 
 Now we will begin to code Rust in R.

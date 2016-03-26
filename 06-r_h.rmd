@@ -1,7 +1,3 @@
----
-knit: "bookdown::preview_chapter"
----
-
 # R Foreign Function Interface
 
 If you are intered in C API, you can read the docs about raw R-C API.

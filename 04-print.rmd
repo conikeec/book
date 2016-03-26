@@ -1,7 +1,3 @@
----
-knit: "bookdown::preview_chapter"
----
-
 # R Console Print in Rust
 
 There are several ways to print to console.
