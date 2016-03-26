@@ -1,7 +1,6 @@
 --- 
 title: "Rustr Book"
 knit: "bookdown::render_book"
-author: "https://book.rustr.org"
 date: "`r paste('updated on ',Sys.Date())`"
 documentclass: book
 bibliography: [book.bib]
@@ -16,7 +15,7 @@ github-repo: rustr/book
 
 # Introduction
 
-**Rust and R Integration**
+## Rust and R Integration**
 
 `rustr` is a Rust library that provides a Rust API to work with R.
 
