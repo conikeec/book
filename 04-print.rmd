@@ -1,8 +1,12 @@
-## R Console Print in Rust
+---
+knit: "bookdown::preview_chapter"
+---
+
+# R Console Print in Rust
 
 There are several ways to print to console.
 
-#### r_printf("...")
+### `r_printf()`
 
 Print message.
 
@@ -10,7 +14,7 @@ Print message.
 r_printf(&format!("{}, {}, {}", "1", 2, 3))
 ```
 
-#### rustr::util::rprint("...") 
+### `rustr::util::rprint()` 
 
 Print R Object.
 
@@ -19,6 +23,10 @@ let res : NumVec = try!(NumVec::rnew(x))
 rprint(res)
 ```
 
-#### r_warn("...")
+### `r_warn()`
 
 Print Warnings.
+
+```rust
+r_warn("warning!")
+```

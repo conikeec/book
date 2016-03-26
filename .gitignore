@@ -1,2 +1,14 @@
 _book/
 node_modules/
+.Rproj.user
+.Rhistory
+.RData
+**/rsconnect/
+.*.Rnb.cached
+*.html
+libs
+bookdown_files
+bookdown_cache
+bookdown.bbl
+bookdown.tex
+packages.bib

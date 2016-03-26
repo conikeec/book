@@ -1,4 +1,10 @@
-## Rusty Error Handling
+---
+knit: "bookdown::preview_chapter"
+---
+
+# Rusty Error Handling
+
+### RResult<T>
 
 Do you want to `Throw` `Throw` `Throw`?? Sorry You can not!
 
@@ -8,7 +14,7 @@ Make sure you learn enough Rust and read the [Rust Book](https://doc.rust-lang.o
 
 This is `Monadic Error Handling`. If you do not know what it means, just forget it. It is not that kind of bad _ss thing.
 
-### RResult<T>
+
 
 If a Rust function may cause error, and need to throw a exception in R, you can return RResult<T> as your function return type.
 
