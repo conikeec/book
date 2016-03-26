@@ -13,11 +13,6 @@ url: 'https\://book.rustr.org'
 github-repo: rustr/book
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE, formatR.indent = 2)
-library(rustinr)
-```
-
 
 # Introduction
 
@@ -29,3 +24,8 @@ Write pure Rust code with `rustr`, and then use `rustinr` R package to generate 
 
 This project is now under construction. Issues and Pull requests are welcome!
 
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, formatR.indent = 2)
+library(rustinr)
+```
