@@ -27,8 +27,8 @@ before_install:
   - ./travis-tool.sh bootstrap
 
 install:
-  - ./travis-tool.sh install_r_binary Rcpp RCurl
-  - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml rsconnect htmlwidgets servr dplyr
+  - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr
+  - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml rsconnect htmlwidgets servr dplyr webshot
   - ./travis-tool.sh install_github rstudio/bookdown
   - ./travis-tool.sh install_github rustr/rustinr
   - "[ -x \"$HOME/bin/phantomjs\" ] || Rscript -e \"webshot::install_phantomjs()\""
