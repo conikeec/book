@@ -31,10 +31,10 @@ before_install:
   - tar xzf /tmp/texlive.tar.gz -C ~
   - export PATH=/$HOME/texlive/bin/x86_64-linux:$PATH
   - tlmgr update --self
-  
+
 install:
   - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr dplyr 
-  - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml servr rsconnect htmlwidgets webshot
+  # - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml servr rsconnect htmlwidgets webshot
   - ./travis-tool.sh install_github rstudio/bookdown
   - ./travis-tool.sh install_github rustr/rustinr
   - wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
