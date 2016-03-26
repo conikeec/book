@@ -101,7 +101,7 @@ Get [R](), I think you know how. :)
 
 ### Get Rust with GNU ABI 
 
-```
+```bash
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
 ```
 
@@ -122,8 +122,8 @@ And we are ready to Play!
 
 Run this in R console.
 
-```r
-rust(code ='
+```{r}
+rust('
 // #[rustr_export]
 pub fn say_hi() -> String{
 	"Hello World".into()
@@ -131,5 +131,4 @@ pub fn say_hi() -> String{
 ')
 
 say_hi()
-#> [1] "Hello World"
 ```

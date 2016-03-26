@@ -25,7 +25,7 @@ pub fn say_hi() -> String{
 
 Just mark it with `// #[rustr_export]`, and put this function in `rust()`
 
-```r
+```{r}
 library(rustinr)
 
 rust(code = '
@@ -38,17 +38,15 @@ pub fn say_hi() -> String{
 
 and then you can call `say_hi` in R.
 
-```r
+```{r}
 say_hi()
-#> [1] "Hello World"
 
 say_hi
-#> function(){ .Call('qxJFNNnLVpqF_say_hi',PACKAGE = 'qxJFNNnLVpqF')}
 ``` 
 
-Here is another example：
+Here is another example:
 
-```r
+```{r}
 rust(code = '
 // #[rustr_export]
 pub fn fib_rs(x:u64)-> u64{
@@ -58,7 +56,6 @@ pub fn fib_rs(x:u64)-> u64{
 }')
 
 fib_rs(10L)
-#> [1] 55
 ```
 
 For more example, you can also checkout https://gallery.rustr.org
@@ -72,24 +69,14 @@ For more example, you can also checkout https://gallery.rustr.org
 
 Just run:
 
-```r
+```{r}
 rustr_init("pkgname",".")
 
-Creating directories ...
-Creating DESCRIPTION ...
-Creating NAMESPACE ...
-Creating Read-and-delete-me ...
-Saving functions and data ...
-Making help files ...
-Done.
-Further steps are described in './pkgname/Read-and-delete-me'.
-added useDynLib to NAMESPACE
-
 list.dirs("pkgname")
+```
 
-[1] "pkgname"                 "pkgname/man"            
-[3] "pkgname/R"               "pkgname/src"            
-[5] "pkgname/src/rustlib"     "pkgname/src/rustlib/src"
+```{r,include=FALSE}
+try(system("rm -rf ./pkgname"))
 ```
 
 `pkgname/src/rustlib` is a Rust library, for more info see http://doc.crates.io/
@@ -98,19 +85,9 @@ Rust files are in `pkgname/src/rustlib/src`.
 
 `pkgname/src/rustlib/src/lib.rs` should begin with:
 
-```r
+```{r}
 # Run This In R
 headr()
-
-#> #[macro_use]
-#> extern crate rustr;
-#> pub mod export;
-#> pub use rustr::*;
-#> 
-#> // #[rustr_export]
-#> pub fn say_hi()->RResult<String>{
-#>    Ok("hello world".into())
-#> }
 ```
 
 or
