@@ -12,6 +12,8 @@ bookdown::gitbook:
     edit:
       link: https://github.com/rustr/book/edit/master/%s
       text: "Edit"
+  includes:
+    in_header: html/ga.htm
 bookdown::html_chapters:
   css: [css/style.css, css/toc.css]
 bookdown::pdf_book:

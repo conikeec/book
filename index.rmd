@@ -6,6 +6,9 @@ bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 site: true
+description: "A guide to Rust and R integration."
+url: 'https\://book.rustr.org'
+github-repo: rustr/book
 ---
 
 ```{r setup, include=FALSE}
