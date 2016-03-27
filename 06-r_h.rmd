@@ -1,6 +1,6 @@
-# R Foreign Function Interface
+# R Raw FFI with `unsafe` Rust
 
-If you are intered in C API, you can read the docs about raw R-C API.
+If you are interested in C API, you can read the docs about raw R-C API.
 
 https://docs.rustr.org/rustr/rdll/index.html and https://docs.rustr.org/rustr/rdll/win64/index.html
 
