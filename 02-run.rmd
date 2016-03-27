@@ -2,6 +2,10 @@
 
 Now we will begin to code Rust in R.
 
+![Dive In](./images/run.jpg)
+
+[@ Nathan Congleton](https://www.flickr.com/photos/nathancongleton/10002041966/) [CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/)
+
 ## `rustinr` R package
 
 `rustinr` is a R package to help user generate the basic struture of a Rust-R package and source Rust script in R. Install it with 

@@ -2,6 +2,10 @@
 
 Rustr support Linux, Mac, and Windows.
 
+![Fuse Ring](./images/setup.jpg)
+
+[@ Chris Lott](https://www.flickr.com/photos/fncll/8604144457/in/photolist-xELx44-aeGtnt-xbcPF1-nT2ZFk-o2wrom-xbcZxW-xs1Le9-xELyLn-xsQof6-mL9ndW-59oVCm-2wPrE-ec7aPH-wvX6sc-8pgKJf-9KiRJr-e7juoe-rzsGcV-7oofH7-2wPrn-dVsH5X-hLf6aW-66S3Qg-8G1fuT-2wPrt) [CC 2.0](https://creativecommons.org/licenses/by/2.0/deed.en)
+
 ## Windows
 
 ### Get R
