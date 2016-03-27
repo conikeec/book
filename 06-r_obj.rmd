@@ -1,0 +1,55 @@
+# R Object
+
+More in [Rust Docs](https://docs.rustr.org/rustr/).
+
+![Sweet](./images/sugar.jpg)
+
+[@ Gloria Garcia](https://www.flickr.com/photos/fl4y/5411655538/) [CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)
+
+## Vector
+
+### NumVec
+
+### IntVec
+
+### RawVec
+
+### BoolVec
+
+### CplVec
+
+## VectorX - Special Vector
+
+### CharVec
+
+### List
+
+### ExprVec
+
+## Rcomplex
+
+## Envir - Enviroment 
+
+## RFun - Function 
+
+## RPtr - External Pointer 
+
+## Fml - Formula 
+
+## RError - Error 
+
+## Symbol - Symbol 
+
+## Promise - Promise 
+
+## S4 - S4 
+
+## Reference - RC 
+
+## RObj - Object 
+
+## RWeak - Weak Reference 
+
+## RRand - Random Source
+
+## RLang - Language 
