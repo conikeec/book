@@ -10,6 +10,14 @@ Print messages.
 r_printf(&format!("{}, {}, {}", "1", 2, 3))
 ```
 
+### `r_message()`
+
+Print messages, which can be suppressed.
+
+```rust
+r_message("bing!")
+```
+
 
 ### `r_warn()`
 
