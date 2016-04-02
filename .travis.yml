@@ -37,7 +37,7 @@ before_install:
   - sudo apt-get install -f
 
 install:
-  - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr dplyr 
+  - ./travis-tool.sh install_r_binary Rcpp RCurl stringi plyr dplyr DT
   # - ./travis-tool.sh install_r htmltools knitr miniUI rmarkdown yaml servr rsconnect htmlwidgets webshot
   - ./travis-tool.sh install_github rstudio/bookdown
   - ./travis-tool.sh install_github rustr/rustinr

@@ -1,0 +1,68 @@
+# Type Table
+
+There are many types!
+
+![Bridge](./images/bridge.jpg)
+
+[@ Gloria Garcia](https://www.flickr.com/photos/kitkit201/16133394909/in/photostream/)
+[CC BY-NC-ND 2.0](https://creativecommons.org/licenses/by-nc-nd/2.0/)
+
+## R and Rust Type
+
+### R type
+
+SEXP pointer in R has these types:
+
+```c
+typedef enum {
+    NILSXP	= 0,	/* nil = NULL */
+    SYMSXP	= 1,	/* symbols */
+    LISTSXP	= 2,	/* lists of dotted pairs */
+    CLOSXP	= 3,	/* closures */
+    ENVSXP	= 4,	/* environments */
+    PROMSXP	= 5,	/* promises: [un]evaluated closure arguments */
+    LANGSXP	= 6,	/* language constructs (special lists) */
+    SPECIALSXP	= 7,	/* special forms */
+    BUILTINSXP	= 8,	/* builtin non-special forms */
+    CHARSXP	= 9,	/* "scalar" string type (internal only)*/
+    LGLSXP	= 10,	/* logical vectors */
+    INTSXP	= 13,	/* integer vectors */
+    REALSXP	= 14,	/* real variables */
+    CPLXSXP	= 15,	/* complex variables */
+    STRSXP	= 16,	/* string vectors */
+    DOTSXP	= 17,	/* dot-dot-dot object */
+    ANYSXP	= 18,	/* make "any" args work */
+    VECSXP	= 19,	/* generic vectors */
+    EXPRSXP	= 20,	/* expressions vectors */
+    BCODESXP	= 21,	/* byte code */
+    EXTPTRSXP	= 22,	/* external pointer */
+    WEAKREFSXP	= 23,	/* weak reference */
+    RAWSXP	= 24,	/* raw bytes */
+    S4SXP	= 25,	/* S4 non-vector */
+
+    NEWSXP      = 30,   /* fresh node creaed in new page */
+    FREESXP     = 31,   /* node released by GC */
+
+    FUNSXP	= 99	/* Closure or Builtin */
+} SEXPTYPE;
+```
+
+From R source code, see [r-source](https://github.com/wch/r-source/blob/10617567bb97827f4b68b375e67f409f6013d93b/src/include/Rinternals.h#L148-L178)
+
+### Rust type 
+
+Rust standard container, such as `Vec` `LinkedList` are all supported. And there are some other types are supported with feature tags.
+
+For example, DMat of `nalgebra` can be used with `ty_nalgebra` feature tag.
+
+## The Type Table
+
+You can also see [Rust Docs](http://docs.rustr.org/rustr/traits/trait.RNew.html) and csv files on [GitHub](https://github.com/rustr/book/blob/master/type_table.csv) 
+
+```{r, echo=FALSE}
+if(Sys.getenv("BOOKDOWNOUT") %in% c("bookdown::gitbook","") ){
+  DT::datatable(read.csv("type_table.csv"))
+} else{
+  knitr::kable(read.csv("type_table.csv"))
+}
+```
