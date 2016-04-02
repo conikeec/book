@@ -51,7 +51,7 @@ impl RNew for String {
 
 And that is all. If you want to use you **own** awesome Rust type as input. impl `RNew` for it.
 
-#### IntoR
+### IntoR
 
 ```rust
 #[no_mangle]
@@ -88,7 +88,7 @@ There is an orphan rule to take care. Only your **own** Rust type can impl trait
 
 If you want to impl `RNew` for `Vec<String>`, you may not get lucky. But you can create a struct to wrap Vec<String>. Rust's zero-cost abstraction feature often helps you eliminate the overhead.
 
-### Want Your `RNew` `IntoR` impl Added to `rustr` Crate? 
+### `RNew` `IntoR` impl Added to `rustr` Crate? 
 
 Create a pull request! 
 

@@ -1,8 +1,0 @@
-R,Rust
-static varible,rconst::
-warn error message printf,dll::message::
-Rf_PrintValue,rprint ToSEXP::print()
-isna isnan isfinite ,dll::
-ATTRIB,traits::attr::
-TYPEOF,rtype::
-Rf_any_duplicated,vector::
