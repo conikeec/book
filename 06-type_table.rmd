@@ -63,6 +63,6 @@ You can also see [Rust Docs](http://docs.rustr.org/rustr/traits/trait.RNew.html)
 if(Sys.getenv("BOOKDOWNOUT") %in% c("bookdown::gitbook","") ){
   DT::datatable(read.csv("type_table.csv"))
 } else{
-  knitr::kable(read.csv("type_table.csv"))
+  knitr::kable(head(read.csv("type_table.csv"), 20))
 }
 ```
