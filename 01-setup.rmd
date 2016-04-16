@@ -10,7 +10,7 @@ Rustr support Linux, Mac, and Windows.
 
 ### Get R
 
-Get [R > 3.3.0](https://cran.r-project.org/bin/windows/base/R-3.3.0alpha-win.exe) build with GCC 4.9 and [Rtools 3.3](https://cran.r-project.org/bin/windows/Rtools/Rtools33.exe)
+Get [R > 3.3.0](https://cran.r-project.org/bin/windows/base/R-3.3.0beta-win.exe) build with GCC 4.9 and [Rtools 3.3](https://cran.r-project.org/bin/windows/Rtools/Rtools33.exe)
 
 ### Get Rust with GNU ABI 
 
