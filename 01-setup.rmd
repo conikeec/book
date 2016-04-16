@@ -101,7 +101,7 @@ say_hi()
 
 ### Get R
 
-Get [R > 3.3.0](), I think you know how. :)
+Get [R > 3.3.0](https://cran.r-project.org/).
 
 ### Get Rust with GNU ABI 
 
