@@ -136,3 +136,23 @@ pub fn say_hi() -> String{
 
 say_hi()
 ```
+
+## Playground with Docker
+
+Visit https://play.rustr.org , and begin to code Rust in R.
+
+This Web App is run in a Docker container. If you want to run this app locally. You can install [Docker](https://docs.docker.com/windows/), and then run:
+
+```bash
+docker pull qinwf/shiny-rust-docker
+
+docker run -p 3838:3838 qinwf/shiny-rust-docker
+```
+
+Visit http://127.0.0.1:3838 for your local version of rustr playground.
+
+You can also run this Docker image with an R console that supports Rust:
+
+```bash
+docker run -ti --rm qinwf/shiny-rust-docker R
+```

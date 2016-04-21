@@ -38,13 +38,13 @@ pub fn say_hi() -> String{
 	"Hello World".into()
 }
 ')
+
+say_hi()
 ```
 
 and then you can call `say_hi` in R.
 
 ```{r}
-say_hi()
-
 say_hi
 ``` 
 
