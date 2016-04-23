@@ -18,10 +18,9 @@ devtools::install_github("rustr/rustinr")
 
 `rust()` is a R function to create Rust function in R console interatively.
 
-If there is a Rust function:
+For a Rust function:
 
 ```rust
-// #[rustr_export]
 pub fn say_hi() -> String{
 	"Hello World".into()
 }
@@ -63,7 +62,6 @@ fib_rs(10L)
 ```
 
 For more example, you can also checkout https://gallery.rustr.org
-
 
 ## Create a Rust-R Package
 
