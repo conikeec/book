@@ -1,6 +1,6 @@
 # R Console Print in Rust
 
-There are several ways to print to console.
+There are several ways to print to R console.
 
 ### `r_printf()`
 

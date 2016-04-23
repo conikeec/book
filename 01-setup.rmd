@@ -10,13 +10,13 @@ Rustr support Linux, Mac, and Windows.
 
 ### Get R
 
-Get [R > 3.3.0](https://cran.r-project.org/bin/windows/base/R-3.3.0beta-win.exe) build with GCC 4.9 and [Rtools 3.3](https://cran.r-project.org/bin/windows/Rtools/Rtools33.exe)
+Get [R > 3.3.0](https://cran.r-project.org/bin/windows/base/R-3.3.0beta-win.exe) builded by GCC 4.9 and [Rtools 3.3](https://cran.r-project.org/bin/windows/Rtools/Rtools33.exe)
 
 ### Get Rust with GNU ABI 
 
 Checkout https://www.rust-lang.org/downloads.html
 
-One of Stable, Beta, or Nightly version of Rust is OK. 
+One of stable, beta, or nightly version of Rust is OK. 
 
 You can put Rust installation in path or set `CARGO_HOME` environment varible to the path of `cargo.exe`. 
 
@@ -31,7 +31,7 @@ install.packages("devtools")
 devtools::install_github("rustr/rustinr")
 ```
 
-And we are ready to Play!
+And we are ready to play!
 
 Run this in R console.
 
@@ -83,7 +83,7 @@ Open Terminal, and run `git` or `clang`, It may show a message to get you starte
 
 Or you can check [this great guide](http://rud.is/b/2015/10/20/installing-r-on-os-x/).
 
-And we are ready to Play!
+And we are ready to play!
 
 Run this in R console.
 
@@ -126,7 +126,7 @@ install.packages("devtools")
 devtools::install_github("rustr/rustinr")
 ```
 
-And we are ready to Play!
+And we are ready to play!
 
 Run this in R console.
 
