@@ -26,7 +26,7 @@ pub extern "C" fn rustr_say_hi(a : SEXP)->SEXP{
 }
 ```
 
-`rustr_say_hi`  take a SEXP R pointer and then use `String::rnew` to convert SEXP to Rust String.
+`rustr_say_hi`  takes a SEXP R pointer and then uses `String::rnew` to convert SEXP to Rust String.
 
 ### RNew
 
@@ -49,7 +49,7 @@ impl RNew for String {
 }
 ```  
 
-And that is all. If you want to use you **own** awesome Rust type as input. impl `RNew` for it.
+And that is all. If you want to use you **own** awesome Rust type as input for R function. impl `RNew` for it.
 
 ### IntoR
 
@@ -66,7 +66,7 @@ pub extern "C" fn rustr_say_hi(a : SEXP)->SEXP{
 }
 ```
 
-From `say_hi(a_)` we get a String. We run `res.intor()`. `String` impl `IntoR`, so we can call `res.intor()`.
+From `say_hi(a_)` we get a `String`, and then we run `res.intor()`. `String` impl `IntoR`, so we can call `res.intor()`.
 
 ```rust
 pub trait IntoR {
@@ -86,7 +86,7 @@ If you want to use you **own** awesome Rust type as **output**. impl `IntoR` for
 
 There is an orphan rule to take care. Only your **own** Rust type can impl traits from `rustr` crates.
 
-If you want to impl `RNew` for `Vec<String>`, you may not get lucky. But you can create a struct to wrap Vec<String>. Rust's zero-cost abstraction feature often helps you eliminate the overhead.
+If you want to impl `RNew` for `Vec<String>`, you may not get lucky. But you can create a struct to wrap Vec<String>. Zero-cost abstraction feature of Rust often helps you eliminate the overhead.
 
 ### `RNew` `IntoR` impl Added to `rustr` Crate? 
 
