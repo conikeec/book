@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rustr Book</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="A guide to Rust and R integration.">
+  <meta name="generator" content="bookdown 0.0.67 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Rustr Book" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://book.rustr.org" />
+  
+  <meta property="og:description" content="A guide to Rust and R integration." />
+  <meta name="github-repo" content="rustr/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Rustr Book" />
+  
+  <meta name="twitter:description" content="A guide to Rust and R integration." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="promise-promise.html">
+<link rel="next" href="reference-rc.html">
+
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="libs/datatables-binding/datatables.js"></script>
+<script src="libs/datatables/jquery.dataTables.min.js"></script>
+<link href="libs/datatables-default/dataTables.extra.css" rel="stylesheet" />
+<link href="libs/datatables-default/jquery.dataTables.min.css" rel="stylesheet" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75482716-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<meta name="twitter:site" content="https://book.rustr.org/">
+<meta name="twitter:title" content="Rustr Book">
+<meta name="twitter:description" content="A Guide for Rust and R Integration.">
+<meta name="twitter:image" content="https://book.rustr.org/rustr_logo.png">
+
+<meta property="og:url" content="https://book.rustr.org/">
+<meta property="og:title" content="Rust and R Integration">
+<meta property="og:description" content="A Guide for Rust and R Integration.">
+<meta property="og:site_name" content="Rustr Book">
+<meta property="og:image" content="https://book.rustr.org/rustr_logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Rustr Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup</a><ul>
+<li class="chapter" data-level="2.1" data-path="windows.html"><a href="windows.html"><i class="fa fa-check"></i><b>2.1</b> Windows</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="windows.html"><a href="windows.html#get-r"><i class="fa fa-check"></i><b>2.1.1</b> Get R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="windows.html"><a href="windows.html#get-rust-with-gnu-abi"><i class="fa fa-check"></i><b>2.1.2</b> Get Rust with GNU ABI</a></li>
+<li class="chapter" data-level="2.1.3" data-path="windows.html"><a href="windows.html#get-rustinr"><i class="fa fa-check"></i><b>2.1.3</b> Get rustinr</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mac.html"><a href="mac.html"><i class="fa fa-check"></i><b>2.2</b> Mac</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="mac.html"><a href="mac.html#get-r-1"><i class="fa fa-check"></i><b>2.2.1</b> Get R</a></li>
+<li class="chapter" data-level="2.2.2" data-path="mac.html"><a href="mac.html#get-rust-with-gnu-abi-1"><i class="fa fa-check"></i><b>2.2.2</b> Get Rust with GNU ABI</a></li>
+<li class="chapter" data-level="2.2.3" data-path="mac.html"><a href="mac.html#get-rustinr-1"><i class="fa fa-check"></i><b>2.2.3</b> Get rustinr</a></li>
+<li class="chapter" data-level="2.2.4" data-path="mac.html"><a href="mac.html#get-xcode-command-line-tools"><i class="fa fa-check"></i><b>2.2.4</b> Get Xcode Command Line Tools</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="linux.html"><a href="linux.html"><i class="fa fa-check"></i><b>2.3</b> Linux</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="linux.html"><a href="linux.html#get-r-2"><i class="fa fa-check"></i><b>2.3.1</b> Get R</a></li>
+<li class="chapter" data-level="2.3.2" data-path="linux.html"><a href="linux.html#get-rust-with-gnu-abi-2"><i class="fa fa-check"></i><b>2.3.2</b> Get Rust with GNU ABI</a></li>
+<li class="chapter" data-level="2.3.3" data-path="linux.html"><a href="linux.html#get-rustinr-2"><i class="fa fa-check"></i><b>2.3.3</b> Get rustinr</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="playground-with-docker.html"><a href="playground-with-docker.html"><i class="fa fa-check"></i><b>2.4</b> Playground with Docker</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="run.html"><a href="run.html"><i class="fa fa-check"></i><b>3</b> Run</a><ul>
+<li class="chapter" data-level="3.1" data-path="rustinr-r-package.html"><a href="rustinr-r-package.html"><i class="fa fa-check"></i><b>3.1</b> <code>rustinr</code> R package</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="rustinr-r-package.html"><a href="rustinr-r-package.html#rust-function-in-r-console"><i class="fa fa-check"></i><b>3.1.1</b> Rust Function in R Console</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="create-a-rust-r-package.html"><a href="create-a-rust-r-package.html"><i class="fa fa-check"></i><b>3.2</b> Create a Rust-R Package</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="create-a-rust-r-package.html"><a href="create-a-rust-r-package.html#init-a-package"><i class="fa fa-check"></i><b>3.2.1</b> Init a Package</a></li>
+<li class="chapter" data-level="3.2.2" data-path="create-a-rust-r-package.html"><a href="create-a-rust-r-package.html#intro-rustrize"><i class="fa fa-check"></i><b>3.2.2</b> Intro <code>rustrize()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>3.3</b> Summary</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="summary.html"><a href="summary.html#rust"><i class="fa fa-check"></i><b>3.3.1</b> rust()</a></li>
+<li class="chapter" data-level="3.3.2" data-path="summary.html"><a href="summary.html#rustr_init"><i class="fa fa-check"></i><b>3.3.2</b> rustr_init()</a></li>
+<li class="chapter" data-level="3.3.3" data-path="summary.html"><a href="summary.html#headr"><i class="fa fa-check"></i><b>3.3.3</b> headr()</a></li>
+<li class="chapter" data-level="3.3.4" data-path="summary.html"><a href="summary.html#rustrize"><i class="fa fa-check"></i><b>3.3.4</b> rustrize()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rusty-error-handling.html"><a href="rusty-error-handling.html"><i class="fa fa-check"></i><b>4</b> Rusty Error Handling</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="rusty-error-handling.html"><a href="rusty-error-handling.html#rresult"><i class="fa fa-check"></i><b>4.0.1</b> RResult<T></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="r-console-print-in-rust.html"><a href="r-console-print-in-rust.html"><i class="fa fa-check"></i><b>5</b> R Console Print in Rust</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="r-console-print-in-rust.html"><a href="r-console-print-in-rust.html#r_printf"><i class="fa fa-check"></i><b>5.0.1</b> <code>r_printf()</code></a></li>
+<li class="chapter" data-level="5.0.2" data-path="r-console-print-in-rust.html"><a href="r-console-print-in-rust.html#r_message"><i class="fa fa-check"></i><b>5.0.2</b> <code>r_message()</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="r-console-print-in-rust.html"><a href="r-console-print-in-rust.html#r_warn"><i class="fa fa-check"></i><b>5.0.3</b> <code>r_warn()</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="r-console-print-in-rust.html"><a href="r-console-print-in-rust.html#rprint"><i class="fa fa-check"></i><b>5.0.4</b> <code>rprint()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html"><i class="fa fa-check"></i><b>6</b> R Type &lt;-&gt; Rust Type</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html#origin"><i class="fa fa-check"></i><b>6.0.1</b> Origin:</a></li>
+<li class="chapter" data-level="6.0.2" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html#generated"><i class="fa fa-check"></i><b>6.0.2</b> Generated:</a></li>
+<li class="chapter" data-level="6.0.3" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html#rnew"><i class="fa fa-check"></i><b>6.0.3</b> RNew</a></li>
+<li class="chapter" data-level="6.0.4" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html#intor"><i class="fa fa-check"></i><b>6.0.4</b> IntoR</a></li>
+<li class="chapter" data-level="6.0.5" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html#orphan-rule"><i class="fa fa-check"></i><b>6.0.5</b> Orphan Rule</a></li>
+<li class="chapter" data-level="6.0.6" data-path="r-type-rust-type.html"><a href="r-type-rust-type.html#rnew-intor-impl-added-to-rustr-crate"><i class="fa fa-check"></i><b>6.0.6</b> <code>RNew</code> <code>IntoR</code> impl Added to <code>rustr</code> Crate?</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="type-table.html"><a href="type-table.html"><i class="fa fa-check"></i><b>7</b> Type Table</a><ul>
+<li class="chapter" data-level="7.1" data-path="r-and-rust-type.html"><a href="r-and-rust-type.html"><i class="fa fa-check"></i><b>7.1</b> R and Rust Type</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="r-and-rust-type.html"><a href="r-and-rust-type.html#r-type"><i class="fa fa-check"></i><b>7.1.1</b> R type</a></li>
+<li class="chapter" data-level="7.1.2" data-path="r-and-rust-type.html"><a href="r-and-rust-type.html#rust-type"><i class="fa fa-check"></i><b>7.1.2</b> Rust type</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="the-type-table.html"><a href="the-type-table.html"><i class="fa fa-check"></i><b>7.2</b> The Type Table</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="r-object.html"><a href="r-object.html"><i class="fa fa-check"></i><b>8</b> R Object</a><ul>
+<li class="chapter" data-level="8.1" data-path="vector.html"><a href="vector.html"><i class="fa fa-check"></i><b>8.1</b> Vector</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="vector.html"><a href="vector.html#numvec"><i class="fa fa-check"></i><b>8.1.1</b> NumVec</a></li>
+<li class="chapter" data-level="8.1.2" data-path="vector.html"><a href="vector.html#intvec"><i class="fa fa-check"></i><b>8.1.2</b> IntVec</a></li>
+<li class="chapter" data-level="8.1.3" data-path="vector.html"><a href="vector.html#rawvec"><i class="fa fa-check"></i><b>8.1.3</b> RawVec</a></li>
+<li class="chapter" data-level="8.1.4" data-path="vector.html"><a href="vector.html#boolvec"><i class="fa fa-check"></i><b>8.1.4</b> BoolVec</a></li>
+<li class="chapter" data-level="8.1.5" data-path="vector.html"><a href="vector.html#cplvec"><i class="fa fa-check"></i><b>8.1.5</b> CplVec</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="vectorx-special-vector.html"><a href="vectorx-special-vector.html"><i class="fa fa-check"></i><b>8.2</b> VectorX - Special Vector</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="vectorx-special-vector.html"><a href="vectorx-special-vector.html#charvec"><i class="fa fa-check"></i><b>8.2.1</b> CharVec</a></li>
+<li class="chapter" data-level="8.2.2" data-path="vectorx-special-vector.html"><a href="vectorx-special-vector.html#list"><i class="fa fa-check"></i><b>8.2.2</b> List</a></li>
+<li class="chapter" data-level="8.2.3" data-path="vectorx-special-vector.html"><a href="vectorx-special-vector.html#exprvec"><i class="fa fa-check"></i><b>8.2.3</b> ExprVec</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="rcomplex.html"><a href="rcomplex.html"><i class="fa fa-check"></i><b>8.3</b> Rcomplex</a></li>
+<li class="chapter" data-level="8.4" data-path="envir-enviroment.html"><a href="envir-enviroment.html"><i class="fa fa-check"></i><b>8.4</b> Envir - Enviroment</a></li>
+<li class="chapter" data-level="8.5" data-path="rfun-function.html"><a href="rfun-function.html"><i class="fa fa-check"></i><b>8.5</b> RFun - Function</a></li>
+<li class="chapter" data-level="8.6" data-path="rptr-external-pointer.html"><a href="rptr-external-pointer.html"><i class="fa fa-check"></i><b>8.6</b> RPtr - External Pointer</a></li>
+<li class="chapter" data-level="8.7" data-path="fml-formula.html"><a href="fml-formula.html"><i class="fa fa-check"></i><b>8.7</b> Fml - Formula</a></li>
+<li class="chapter" data-level="8.8" data-path="rerror-error.html"><a href="rerror-error.html"><i class="fa fa-check"></i><b>8.8</b> RError - Error</a></li>
+<li class="chapter" data-level="8.9" data-path="symbol-symbol.html"><a href="symbol-symbol.html"><i class="fa fa-check"></i><b>8.9</b> Symbol - Symbol</a></li>
+<li class="chapter" data-level="8.10" data-path="promise-promise.html"><a href="promise-promise.html"><i class="fa fa-check"></i><b>8.10</b> Promise - Promise</a></li>
+<li class="chapter" data-level="8.11" data-path="s4-s4.html"><a href="s4-s4.html"><i class="fa fa-check"></i><b>8.11</b> S4 - S4</a></li>
+<li class="chapter" data-level="8.12" data-path="reference-rc.html"><a href="reference-rc.html"><i class="fa fa-check"></i><b>8.12</b> Reference - RC</a></li>
+<li class="chapter" data-level="8.13" data-path="robj-object.html"><a href="robj-object.html"><i class="fa fa-check"></i><b>8.13</b> RObj - Object</a></li>
+<li class="chapter" data-level="8.14" data-path="rweak-weak-reference.html"><a href="rweak-weak-reference.html"><i class="fa fa-check"></i><b>8.14</b> RWeak - Weak Reference</a></li>
+<li class="chapter" data-level="8.15" data-path="rrand-random-source.html"><a href="rrand-random-source.html"><i class="fa fa-check"></i><b>8.15</b> RRand - Random Source</a></li>
+<li class="chapter" data-level="8.16" data-path="rlang-language.html"><a href="rlang-language.html"><i class="fa fa-check"></i><b>8.16</b> RLang - Language</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="r-raw-ffi-with-unsafe-rust.html"><a href="r-raw-ffi-with-unsafe-rust.html"><i class="fa fa-check"></i><b>9</b> R Raw FFI with <code>unsafe</code> Rust</a></li>
+<li class="chapter" data-level="10" data-path="cheat-sheet.html"><a href="cheat-sheet.html"><i class="fa fa-check"></i><b>10</b> Cheat Sheet</a></li>
+<li class="divider"></li>
+<li><a href="https://rustr.org" target="blank">Build with R bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Rustr Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="s4---s4" class="section level2">
+<h2><span class="header-section-number">8.11</span> S4 - S4</h2>
+<p><a href="https://docs.rustr.org/rustr/s4/struct.S4M.html" class="uri">https://docs.rustr.org/rustr/s4/struct.S4M.html</a></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="promise-promise.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reference-rc.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rustr/book/edit/master/07-r_obj.rmd",
+"text": "Edit"
+},
+"download": ["bookdown.pdf", "bookdown.epub", "bookdown.mobi"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
