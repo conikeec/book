@@ -47,6 +47,12 @@ say_hi()
 #> [1] "Hello World"
 ```
 
+If some errors show up, run `check_rustr` to get more info:
+
+```r
+check_rustr(detail = T)
+```
+
 ## Mac
 
 ### Get R
@@ -99,6 +105,12 @@ say_hi()
 #> [1] "Hello World"
 ```
 
+If some errors show up, run `check_rustr` to get more info:
+
+```r
+check_rustr(detail = T)
+```
+
 ## Linux
 
 ### Get R
@@ -139,6 +151,12 @@ pub fn say_hi() -> String{
 ')
 
 say_hi()
+```
+
+If some errors show up, run `check_rustr` to get more info:
+
+```r
+check_rustr(detail = T)
 ```
 
 ## Playground with Docker
