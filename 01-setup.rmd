@@ -59,6 +59,14 @@ check_rustr(detail = T)
 
 Get [R > 3.3.0](https://cran.r-project.org/bin/macosx/).
 
+Those using [RStudio](https://www.rstudio.com/), follow steps as indicated below
+1.Download the [distribution](https://www.rstudio.com/products/rstudio/download) based on your operating system 
+2.Note that RStudio can be launched from Finder/Doc or command line
+3.On launching RStudio from Finder you will notice that it will not get it's environment from ~/.bashrc or ~/.zshrc. Instead, it will get it's environment variables from system-wide settings. To verify, launch RStudio from Finder and type ```system(echo $PATH)```. Then compare by typing ```echo $PATH``` in your terminal. 
+3.In order to mitigate this, create a start-up initialization script to load your environment variables as configured in ~/.bashrc or ~/.zshrc
+  ```touch ~/.Renviron | R_PATH="PATH=$PATH" | echo $R_PATH >  ~/.Renviron```
+4.Restart RStudio and verify again by typing ```system(echo $PATH)``` at command prompt.
+
 ### Get Rust with GNU ABI 
 
 Checkout https://www.rust-lang.org/downloads.html
